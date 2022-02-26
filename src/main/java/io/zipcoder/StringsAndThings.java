@@ -44,9 +44,19 @@ public class StringsAndThings {
      *           removeString("Hello there", "e") //  Should return "Hllo thr"
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
-    public String removeString(String base, String remove){
-        return null;
+    public String removeString(String base, String remove) {
+
+
+        for (int i = 0; i < base.length(); i++) {
+            if (remove == base.charAt(i)) {
+                base = base.replace(remove, "");
+                System.out.println(base);
+            }
+        }
+        return base;
+
     }
+
 
     /**
      * Given a string, return true if the number of appearances of "is" anywhere in the string is equal

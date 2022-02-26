@@ -4,7 +4,7 @@ package io.zipcoder;
 /**
  * @author tariq
  */
-public class StringsAndThings {
+public class StringsAndThings<base> {
 
     /**
      * Given a string, count the number of words ending in 'y' or 'z' -- so the 'y' in "heavy" and the 'z' in "fez" count,
@@ -45,15 +45,10 @@ public class StringsAndThings {
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
     public String removeString(String base, String remove) {
+        String removeString = base.replace(remove, "");
+                System.out.println(removeString);
 
-
-        for (int i = 0; i < base.length(); i++) {
-            if (remove == base.charAt(i)) {
-                base = base.replace(remove, "");
-                System.out.println(base);
-            }
-        }
-        return base;
+                return removeString;
 
     }
 

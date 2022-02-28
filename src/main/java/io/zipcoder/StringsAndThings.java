@@ -1,6 +1,9 @@
 package io.zipcoder;
 
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * @author tariq
  */
@@ -31,7 +34,6 @@ public class StringsAndThings<base> {
             }
 
         }
-
         return count;
     }
 
@@ -45,8 +47,9 @@ public class StringsAndThings<base> {
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
     public String removeString(String base, String remove) {
+
         String removeString = base.replace(remove, "");
-                System.out.println(removeString);
+        System.out.println(removeString);
 
                 return removeString;
 
@@ -61,9 +64,30 @@ public class StringsAndThings<base> {
      *           containsEqualNumberOfIsAndNot("This is notnot") // Should return true
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
-    public Boolean containsEqualNumberOfIsAndNot(String input){
-        return null;
-    }
+    public Boolean containsEqualNumberOfIsAndNot(String input) {
+
+        Pattern isp = Pattern.compile("is");
+        Matcher ism = isp.matcher(input);
+        Pattern notp = Pattern.compile("not");
+        Matcher notm = notp.matcher(input);
+
+        int matchis = 0;
+        int matchnot = 0;
+
+        while (ism.find()) {
+            matchis++;
+        }
+
+        while (notm.find()) {
+            matchnot++;
+        }
+
+        Boolean count = true;
+        if (matchis == matchnot) {
+            count = true;
+        }
+
+
 
     /**
      * We'll say that a lowercase 'g' in a string is "happy" if there is another 'g' immediately to its left or right.
@@ -72,9 +96,11 @@ public class StringsAndThings<base> {
      *           gHappy("xxgxx") // Should return  false
      *           gHappy("xxggyygxx") // Should return  false
      */
-    public Boolean gIsHappy(String input){
-        return null;
-    }
+////    public Boolean gIsHappy(String input){
+//
+//
+//        return null;
+//    }
 
 
     /**
@@ -84,7 +110,7 @@ public class StringsAndThings<base> {
      *            countTriple("xxxabyyyycd") // Should return 3
      *            countTriple("a") // Should return 0
      */
-    public Integer countTriple(String input){
-        return null;
-    }
-}
+//    public Integer countTriple(String input){
+//        return null;
+//    }
+//}

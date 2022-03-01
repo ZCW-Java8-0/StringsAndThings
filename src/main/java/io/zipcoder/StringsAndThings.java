@@ -118,7 +118,18 @@ public class StringsAndThings<base> {
      *            countTriple("a") // Should return 0
      */
     public Integer countTriple(String input){
-        return null;
-    }
+        int count = 0;
+        for (int i = 0; i < input.length()-1; i++){
+            if (i < input.length() - 4) {
+               if (input.charAt(i) == input.charAt(i + 1)) {
+                   if (input.charAt(i + 1) == input.charAt(i + 2)) {
+                       count++;
+                   }
+               }
 
+            }
+
+    }
+        return count;
+    }
 }

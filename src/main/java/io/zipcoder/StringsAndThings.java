@@ -65,23 +65,23 @@ public class StringsAndThings<base> {
      */
     public Boolean containsEqualNumberOfIsAndNot(String input) {
 
-        Pattern isp = Pattern.compile("is");
-        Matcher ism = isp.matcher(input);
-        Pattern notp = Pattern.compile("not");
-        Matcher notm = notp.matcher(input);
+        Pattern isP = Pattern.compile("is");
+        Matcher isM = isP.matcher(input);
+        Pattern notP = Pattern.compile("not");
+        Matcher notM = notP.matcher(input);
 
-        int matchis = 0;
-        int matchnot = 0;
+        int matchIs = 0;
+        int matchNot = 0;
 
-        while (ism.find()) {
-            matchis++;
+        while (isM.find()) {
+            matchIs++;
         }
 
-        while (notm.find()) {
-            matchnot++;
+        while (notM.find()) {
+            matchNot++;
         }
 
-        return (matchis == matchnot);
+        return (matchIs == matchNot);
 
     }
 
@@ -96,9 +96,17 @@ public class StringsAndThings<base> {
      *           gHappy("xxggyygxx") // Should return  false
      */
     public Boolean gIsHappy(String input){
-
-
-        return null;
+        String gIsHappy = "";
+        for (int i = 0; i < input.length(); i++ ) {
+            if (input.charAt(i) == 'g') {
+                if (input.charAt(i-1) == 'g' || input.charAt(i+1) == 'g') {
+                    gIsHappy = "happy";
+                } else {
+                    gIsHappy = "sad";
+                }
+            }
+        }
+        return (gIsHappy == "happy");
     }
 
 

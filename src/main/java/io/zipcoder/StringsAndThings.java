@@ -119,8 +119,14 @@ public class StringsAndThings<base> {
      */
     public Integer countTriple(String input){
         int count = 0;
+//        int length = input.length();
+//        int lengthMinusOne = input.length()-1;
         for (int i = 0; i < input.length()-1; i++){
-            if (i < input.length() - 4) {
+//            int lengthMinusFour = input.length() - 3;
+            if (i < input.length() - 3) {
+//                char charAti = input.charAt(i);
+//                char charAtiPlusOne = input.charAt(i + 1);
+//                char charAtiPlusTwo = input.charAt(i + 2);
                if (input.charAt(i) == input.charAt(i + 1)) {
                    if (input.charAt(i + 1) == input.charAt(i + 2)) {
                        count++;
